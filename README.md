@@ -41,4 +41,4 @@ ASSASSIN:
 ... and there is a mysterious character who gets a random type on each instantiation.
 You can test in the Game main class with a while loop for example...
 
-These modifiers cannot be changed externally.
+These enum modifiers cannot be changed externally.
