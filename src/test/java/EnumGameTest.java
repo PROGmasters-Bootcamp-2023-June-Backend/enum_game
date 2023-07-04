@@ -26,7 +26,7 @@ class EnumGameTest {
         assertEquals(60, orc.getHealthPoint());
         assertEquals(15, orc.getSpeed());
         assertEquals(5, orc.getArmor());
-        assertEquals(Type.ORC, orc.getType());
+        assertEquals(String.valueOf(Type.ORC), orc.getType());
     }
 
     @Test
@@ -35,7 +35,7 @@ class EnumGameTest {
         assertEquals(45, knight.getHealthPoint());
         assertEquals(40, knight.getSpeed());
         assertEquals(20, knight.getArmor());
-        assertEquals(Type.KNIGHT, knight.getType());
+        assertEquals(String.valueOf(Type.KNIGHT), knight.getType());
     }
 
     @Test
@@ -44,7 +44,7 @@ class EnumGameTest {
         assertEquals(55, wizard.getHealthPoint());
         assertEquals(20, wizard.getSpeed());
         assertEquals(0, wizard.getArmor());
-        assertEquals(Type.WIZARD, wizard.getType());
+        assertEquals(String.valueOf(Type.WIZARD), wizard.getType());
     }
 
     @Test
@@ -53,7 +53,7 @@ class EnumGameTest {
         assertEquals(45, assassin.getHealthPoint());
         assertEquals(30, assassin.getSpeed());
         assertEquals(0, assassin.getArmor());
-        assertEquals(Type.ASSASSIN, assassin.getType());
+        assertEquals(String.valueOf(Type.ASSASSIN), assassin.getType());
     }
 
 }

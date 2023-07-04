@@ -1,0 +1,14 @@
+package org.enumgame;
+
+public class Knight extends Character{
+
+
+    public Knight(String name) {
+        super(name);
+        setDamage(getDamage()+Type.KNIGHT.getDamage());
+        setSpeed(getSpeed()+Type.KNIGHT.getSpeed());
+        setHealthPoint(getHealthPoint()+Type.KNIGHT.getHealtpoints());
+        setArmor(getArmor()+Type.KNIGHT.getArmor());
+        setType(Type.KNIGHT.getType());
+    }
+}
