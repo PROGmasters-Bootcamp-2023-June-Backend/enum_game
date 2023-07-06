@@ -1,26 +1,50 @@
 package org.enumgame;
 
-public abstract class basicCharacter {
+import java.util.Random;
 
+public abstract class basicCharacter {
 
     private String name;
     private int healthPoint;
     private int damage;
     private int speed;
     private int armor;
-    private Type characters;
+    private Type type;
 
-    public basicCharacter(String name) {
+    public basicCharacter(String name, Type type) {
         this.name = name;
-        this.characters = characters;
         this.healthPoint = 50;
         this.damage = 30;
         this.speed = 20;
         this.armor = 0;
-
+        setUp(type);
     }
 
-    public basicCharacter() {
+    public basicCharacter(String name) {
+        this.name = name;
+        this.healthPoint = 50;
+        this.damage = 30;
+        this.speed = 20;
+        this.armor = 0;
+        setUp(randomType());
+    }
+
+    private void setUp(Type type) {
+        this.type = type;
+        this.armor += type.getArmor();
+        this.damage += type.getDamage();
+        this.speed += type.getSpeed();
+        this.healthPoint += type.getHealtPoints();
+    }
+
+    private Type randomType(){
+
+        int numberOfType = Type.values().length;
+        Random random = new Random();
+        int rndIndex= random.nextInt(numberOfType);
+        Type type = Type.values()[rndIndex];
+
+        return type;
     }
 
     public String getName() {
@@ -63,11 +87,11 @@ public abstract class basicCharacter {
         this.armor = armor;
     }
 
-    public Type getCharacters() {
-        return characters;
+    public Type getType() {
+        return type;
     }
 
-    public void setCharacters(Type characters) {
-        this.characters = characters;
+    public void setType(Type type) {
+        this.type = type;
     }
 }
